@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="images/favicon.ico" />
+    <title>College Profile Page</title>
+    <style>
+        
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(1, 3, 33);
+        }
+        .go-button{
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .profile-container {
+            max-width: 500px;
+            margin: auto;
+            width: 60%;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 90%;
+            padding: 15px;
+            background-color: #c4c1fd;
+            border: 0.2px solid #c4c1fd;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .event-details {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    </div>
+    <div class="profile-container">
+        <h3>Add Event on Google Calender</h1>
+        <p>Click the button to go to Google Calender:</p>
+        <button class="go-button" id="redirectButton">Google Calender</button>
+        <h1 style="text-align:center;">College Profile</h1>
+        
+        <form id="event-form">
+            <div class="form-group">
+                <label for="event-name">Event Name</label>
+                <input type="text" id="event-name" name="event-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">Event Start Date</label>
+                <input type="date" id="start-date" name="start-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="end-date">Event End Date</label>
+                <input type="date" id="end-date" name="end-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="organized-by">Organized By</label>
+                <input type="text" id="organized-by" name="organized-by" required>
+            </div>
+
+            <button type="button" class="submit-button" onclick="displayEventDetails()">Submit</button>
+        </form>
+
+        <div class="event-details" id="event-details">
+            <!-- Event details will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("redirectButton").addEventListener("click", function() {
+            window.location.href = "index2.html";
+        });
+        function displayEventDetails() {
+            const eventName = document.getElementById("event-name").value;
+            const startDate = document.getElementById("start-date").value;
+            const endDate = document.getElementById("end-date").value;
+            const organizedBy = document.getElementById("organized-by").value;
+
+            const eventDetails = `
+                <h3>Event Details</h3>
+                <p><strong>Event Name:</strong> ${eventName}</p>
+                <p><strong>Start Date:</strong> ${startDate}</p>
+                <p><strong>End Date:</strong> ${endDate}</p>
+                <p><strong>Organized By:</strong> ${organizedBy}</p>
+            `;
+
+            document.getElementById("event-details").innerHTML = eventDetails;
+        }
+    </script>
+</body>
+</html>

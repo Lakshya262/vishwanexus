@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food</title>
+  <link rel="stylesheet" type="text/css" href="apparels.css">
+  <link rel="icon" href="images/favicon.ico" />
+</head>
+<body>
+
+  <h1>FOOD</h1>
+
+  <div class="tab-container">
+    <button class="tab" onclick="showProfile('tech-solutions')">Tech Solutions Inc.</button>
+    <button class="tab" onclick="showProfile('gourmet-delights')">Gourmet Delights Catering</button>
+    <!-- Add more tabs as needed -->
+  </div>
+
+  <div id="tech-solutions" class="business-profile">
+    <img src="business1-logo.jpg" alt="Tech Solutions Inc. Logo" class="business-logo">
+    <div class="business-name">Tech Solutions Inc.</div>
+    <div class="business-description">Providing cutting-edge technology solutions for businesses worldwide. We specialize in software development, cloud computing, and IT consulting services.</div>
+  </div>
+
+  <div id="gourmet-delights" class="business-profile">
+    <img src="business2-logo.jpg" alt="Gourmet Delights Catering Logo" class="business-logo">
+    <div class="business-name">Gourmet Delights Catering</div>
+    <div class="business-description">Indulge your taste buds with our gourmet catering services. From corporate events to weddings, we create culinary experiences that leave a lasting impression.</div>
+  </div>
+
+  <!-- Add more business profiles as needed -->
+
+  <script>
+    function showProfile(profileId) {
+      // Hide all profiles
+      const profiles = document.querySelectorAll('.business-profile');
+      profiles.forEach(profile => {
+        profile.style.display = 'none';
+      });
+
+      // Show the selected profile
+      const selectedProfile = document.getElementById(profileId);
+      selectedProfile.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
